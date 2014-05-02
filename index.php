@@ -5,18 +5,31 @@
 <title>INTRANET CEADIS</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel='shortcut icon' href='img/ceadisico.ico'>
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-principal">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	</div>
+	
+		<div class="container-fluid collapse navbar-collapse" id="menu-principal">
 			<h4 class="navbar-text"><a href="index.php">CEADIS - Centro Estadual de Armazenamento e Distribuição de insumos de Saúde</a></h4>
-			<h5 class="navbar-right navbar-text"><?php echo(date('d-m-Y H:i:s'));?></h5>
+			<h5 class="navbar-right navbar-text"><?php echo(date('d-m-Y H:i:s'));?></h5><span class="navbar-right navbar-text"></span>
 		</div>
 	</nav>
-	
+
 	<nav class="navbar"></nav>
 
+	
 	<div class="container-fluid ">
 		<div class="col-sm-3">
 			<div class="panel panel-default">
@@ -63,12 +76,14 @@
 
 	</div>
 	<footer>
-		<nav class="navbar navbar-default navbar-fixed-bottom"
-			role="navigation">
-			<p class="navbar-text">© CEADIS - <?php echo date('Y'); ?>
+		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+			<p class="navbar-text">..::  © CEADIS [Tecnologia da Informação] <?php echo date('Y'); ?> ::..</p> 
 		</nav>
 		<nav class="navbar"></nav>
 	</footer>
 
+		<script src=js/jquery.js></script>
+		<script src="js/bootstrap.js"></script>
+	
 </body>
 </html>
