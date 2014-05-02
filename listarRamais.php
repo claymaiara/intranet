@@ -14,7 +14,7 @@ require_once '../intranet/config/config.php';
 
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
-			<h4 class="navbar-text">CEADIS - Centro Estadual de Armazenamento e Distribuição de insumos de Saúde</h4>
+			<h4 class="navbar-text"><a href="index.php">CEADIS - Centro Estadual de Armazenamento e Distribuição de insumos de Saúde</a></h4>
 			<h5 class="navbar-right navbar-text"><?php echo(date('d-m-Y H:i:s'));?></h5>
 		</div>
 	</nav>
@@ -29,16 +29,9 @@ require_once '../intranet/config/config.php';
 				</div>
 				<div class="panel-body">
 					<ul class="list-unstyled">
-						<li><a href="http://172.22.0.42/armhazena">WMS - Armhazena</a></li>
-						<li><a href="http://172.22.0.33/ceadis">Portal - Estoque Web</a></li>
-						<li><a href="http://177.184.203.235:8088/estoque/">Portal -
-								Sorocaba</a></li>
-						<li><a href="http://172.22.0.30/SGA">SGA - Sistema de Gestão de
-								Atividade</a></li>
-						<li><a href="http://172.22.0.46/estoque/">Solicitação de Materiais</a></li>
-						<li><a href="http://187.48.62.186:81/corpore.net/Login.aspx">Portal
-								- RH</a></li>
-						<li><a href="http://192.168.31.250/">Pesquisas ADAIA</a></li>
+					<?php 
+						include_once 'links.php';
+					?>					
 					</ul>
 				</div>
 			<div class="panel-footer"></div>
@@ -68,13 +61,9 @@ require_once '../intranet/config/config.php';
 				<div class="panel-body">
 			<?php 
 			
-			$cabecalho = array('ID','Nome','Departamento','Perfil');
-			
 			$tbUsuario = new TbUsuario();
 			
-			$Table = new Table($cabecalho,$tbUsuario->selectUsuarios());
-			
-			
+			$Table = new Table(array('Nome','Ramal','Departamento'),$tbUsuario->listarRamaisIntranet());
 			
 			$Table->mostrarDatagrid();
 			
@@ -87,11 +76,10 @@ require_once '../intranet/config/config.php';
 
 
 	</div>
+	
 	<footer>
-		<nav class="navbar navbar-default navbar-fixed-bottom"
-			role="navigation">
-			<p class="navbar-text">© CEADIS - 2014
-		
+		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+			<p class="navbar-text">© CEADIS - <?php echo date('Y'); ?>
 		</nav>
 		<nav class="navbar"></nav>
 	</footer>
