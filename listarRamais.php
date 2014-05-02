@@ -1,3 +1,7 @@
+<?php 
+require_once '../intranet/config/config.php';
+
+?>
 <!doctype html>
 <html>
 <head>
@@ -26,9 +30,8 @@
 				<div class="panel-body">
 					<ul class="list-unstyled">
 					<?php 
-					include_once 'links.php';
-					
-					?>
+						include_once 'links.php';
+					?>					
 					</ul>
 				</div>
 			<div class="panel-footer"></div>
@@ -48,27 +51,43 @@
 
 	</div>
 	<div class="container col-sm-9">
+	
 		<div class="jumbotron ">
-			<h1>
-				<b>CEADIS</b>
-			</h1>
-			<p>Ao lado você encontra os links de acesso aos principais sistemas
-				do CEADIS.</p>
-			<img src="img/fotoinicial.png" class="img-responsive img-rounded"
-				alt="Logotipo Ceadis">
 
+			<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Lista de Ramais</h3>
+					</div>
+				<div class="panel-body">
+			<?php 
+			
+			$tbUsuario = new TbUsuario();
+			
+			$Table = new Table(array('Nome','Ramal','Departamento'),$tbUsuario->listarRamaisIntranet());
+			
+			$Table->mostrarDatagrid();
+			
+			?>
+				</div>
+			</div>
 		</div>
+		
 	</div>
 
 
 	</div>
+	
 	<footer>
-		<nav class="navbar navbar-default navbar-fixed-bottom"
-			role="navigation">
+		<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
 			<p class="navbar-text">© CEADIS - <?php echo date('Y'); ?>
 		</nav>
 		<nav class="navbar"></nav>
 	</footer>
+
+	<script src=js/jquery.js></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.dataTables.js"></script>	
+	<script src="js/my-data-table.js"></script>		
 
 </body>
 </html>
