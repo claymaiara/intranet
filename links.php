@@ -5,3 +5,4 @@
 <li><a href="http://172.22.0.46/estoque/" target="_blank">Solicitação de Materiais</a></li>
 <li><a href="http://187.48.62.186:81/corpore.net/Login.aspx" target="_blank">Portal - RH</a></li>
 <li><a href="http://192.168.31.250/" target="_blank">Pesquisas ADAIA</a></li>
+<li><a href="https://172.22.0.31/owa" target="_blank">Webmail</a></li>
